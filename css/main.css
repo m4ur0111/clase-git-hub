@@ -1,0 +1,199 @@
+/*
+    rem toma al tamaño de 1rem = 16px
+    1 rem = 16 px
+    2 rem = 32 px
+    1.5 rem = 24 px 
+*/
+
+/*
+    em toma el tamaño del contenedor mas proximo que tenga
+    em = 16 px
+*/
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+/* Estilos generales */
+body{
+    background: linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(215,218,218,0.6923144257703081) 100%);
+}
+
+/* Estilos del header*/
+header{
+    display: none;
+}
+
+/* Estilos del main*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+main h2{
+    margin: 1rem;
+}
+
+main h2 span{
+    display: block;
+}
+
+main .boton{
+    background-color: #51b0df;
+    color: whitesmoke;
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem 0.7rem 1.2rem;
+    box-shadow: 3px 3px 10px black;
+}
+
+main img{
+    width: 60%;
+}
+
+/* Estilos de section */
+section{
+    display: none;
+}
+
+/* Estilos de footer*/
+footer h4{
+    text-align: center;
+}
+
+
+/* Pantallas de tablet*/
+@media screen and (min-width: 600px){
+    /* Estilos de header*/
+    header{
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 0.7rem;
+        align-items: center;
+    }
+
+    header nav ul{
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+    }
+
+    header nav ul li{
+        font-weight: bold;
+    }
+
+    /* Estilos de section */
+    section{
+        display: block;
+        display: flex;
+        background-color: #BEE0F1;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    section div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation-name: animacion-div;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    @keyframes animacion-div {
+        0%{
+            transform: scale(0.5);
+        }        
+        50%{
+            transform: scale(0.8);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+
+    section div img{
+        width: 20%;
+    }
+
+
+}
+
+/* Estilos de pantallas de escritorio */
+@media screen and (min-width: 1024px){
+
+    /* Estilos del menu */
+    header nav ul li{
+        transition: 1.2s;
+    }
+
+    header nav ul li:hover{
+        transform: scale(0.9);
+        transition: 1.2s;
+        box-shadow: 1px 1px 2px black;
+    }
+
+    /* Estilos de main */
+    main{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "p img"
+        "h2 img"
+        "p-dos img"
+        "boton img";
+        justify-content: center;
+        justify-items: center;
+    }
+
+    main h2{
+        grid-area: h2;
+    }
+
+    main img{
+        grid-area: img;
+    }
+
+    main img:hover{
+        filter: drop-shadow(10px 10px);
+    }
+
+    main p{
+        grid-area: p;
+    }
+
+    main .p-dos{
+        grid-area: p-dos;
+        width: 70%
+    }
+
+    main .boton{
+        grid-area: boton;
+    }
+
+    main .boton:hover{
+        box-shadow: 2px 2px 3px black;
+    }
+    
+    /* Estilos de footer */
+    footer{
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+
+
+
